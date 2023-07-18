@@ -32,3 +32,7 @@ media
 mediana <- median(coluna_mpg)
 mediana
 
+## calculando o desvio padrao da coluna mpg
+desvio_padrao <- sd(coluna_mpg)
+desvio_padrao
+
