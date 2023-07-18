@@ -10,7 +10,7 @@ View(data)
 ## exibir as variaveis
 glimpse(data)
 
-## Com a coluna mpg que consta na base, calcular: mínimo e o máximo valor, média,
+## A) Com a coluna mpg que consta na base, calcular: mínimo e o máximo valor, média,
 ## mediana, desvio padrão, os quartis, construir o histograma e o boxplot e interpretar
 ## os resultados.
 
@@ -48,7 +48,7 @@ boxplot(coluna_mpg)
 
 
 
-## Gerar um gráfico boxplot com as colunas disp e hp.
+## B) Gerar um gráfico boxplot com as colunas disp e hp.
 coluna_disp <- data$disp
 coluna_hp <- data$hp
   ### juntando as colunas
