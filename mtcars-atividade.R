@@ -40,3 +40,6 @@ desvio_padrao
 quartis <- quantile(coluna_mpg, c(0.25, 0.5, 0.75))
 quartis
 
+## construindo o histograma da coluna mpg
+hist(coluna_mpg)
+
