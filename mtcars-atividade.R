@@ -82,3 +82,6 @@ coluna_qsec <- data$qsec
   ## gerando o histograma
   hist(coluna_qsec)
   
+  ## d) Com a coluna hp, gerar um histograma, e elaborar uma tabela de frequência usando
+  ## as classes sugeridas pelo histograma.
+  
