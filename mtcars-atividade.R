@@ -72,3 +72,10 @@ coluna_qsec <- data$qsec
   ### construindo a tabela com a frequencia absoluta e a frequencia relativa
   tabela_frequencias <- data.frame(Frequencia_Absoluta = frequencia_abs_qsec, Frequencia_Relativa = frequencia_rel_qsec)
   tabela_frequencias
+  
+  ### calculando as frequências absolutas acumuladas e as frequências relativas acumuladas
+  frequencia_absoluta_acumulada <- cumsum(frequencia_abs_qsec)
+  frequencia_absoluta_acumulada
+  frequencia_relativa_acumulada <- prop.table(frequencia_absoluta_acumulada)
+  frequencia_relativa_acumulada
+  
