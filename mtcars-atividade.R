@@ -36,3 +36,7 @@ mediana
 desvio_padrao <- sd(coluna_mpg)
 desvio_padrao
 
+## calculando os quartis da coluna mpg
+quartis <- quantile(coluna_mpg, c(0.25, 0.5, 0.75))
+quartis
+
