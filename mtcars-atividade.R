@@ -69,4 +69,6 @@ coluna_qsec <- data$qsec
   ### calculando a frequencia relativa da coluna qsec
   frequencia_rel_qsec <- prop.table(frequencia_abs_qsec)
   frequencia_rel_qsec
-  
+  ### construindo a tabela com a frequencia absoluta e a frequencia relativa
+  tabela_frequencias <- data.frame(Frequencia_Absoluta = frequencia_abs_qsec, Frequencia_Relativa = frequencia_rel_qsec)
+  tabela_frequencias
