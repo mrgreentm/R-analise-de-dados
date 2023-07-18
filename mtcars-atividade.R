@@ -28,3 +28,7 @@ minimo
 media <- mean(coluna_mpg)
 media
 
+## calculando a mediana da coluna mpg
+mediana <- median(coluna_mpg)
+mediana
+
