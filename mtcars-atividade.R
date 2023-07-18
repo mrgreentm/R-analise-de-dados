@@ -79,3 +79,6 @@ coluna_qsec <- data$qsec
   frequencia_relativa_acumulada <- prop.table(frequencia_absoluta_acumulada)
   frequencia_relativa_acumulada
   
+  ## gerando o histograma
+  hist(coluna_qsec)
+  
