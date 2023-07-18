@@ -46,3 +46,11 @@ hist(coluna_mpg)
 ## construindo o boxplot da coluna mpg
 boxplot(coluna_mpg)
 
+
+
+## Gerar um gráfico boxplot com as colunas disp e hp.
+coluna_disp <- data$disp
+coluna_hp <- data$hp
+  ### juntando as colunas
+join_disp_hp <- list(coluna_hp,coluna_disp)
+boxplot(join_disp_hp, names = c("hp","disp"))
