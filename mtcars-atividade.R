@@ -43,3 +43,6 @@ quartis
 ## construindo o histograma da coluna mpg
 hist(coluna_mpg)
 
+## construindo o boxplot da coluna mpg
+boxplot(coluna_mpg)
+
