@@ -113,3 +113,19 @@ coluna_qsec <- data$qsec
   
   
   
+  # f) Escolher duas variáveis (colunas), sendo uma qualitativa e outra quantitativa, gerar
+  # gráficos de barras e interpretar os resultados.
+  
+  # Passo 1: Calcular a média (ou mediana) de hp para cada categoria de marcha
+  library(dplyr)
+  
+  # Usaremos a média como exemplo, mas você também pode usar a mediana (função median())
+  media_hp_por_marcha <- data %>%
+    group_by(marcha) %>%
+    summarize(media_hp = mean(hp))
+  
+  # Passo 2: Gerar o gráfico de barras
+  barplot(media_hp_por_marcha$media_hp, names.arg = media_hp_por_marcha$marcha, col = "lightblue", main = "Média de hp por Marcha", xlab = "Marcha", ylab = "Média de hp")
+  
+  
+  
