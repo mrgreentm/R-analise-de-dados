@@ -87,7 +87,7 @@ coluna_qsec <- data$qsec
   
   # Gerando histograma
   coluna_hp <- data$hp
-  hist(coluna_hp)
+  histograma_hp <- hist(coluna_hp)
   
   # Passo 2: Construir a tabela de frequência usando as classes sugeridas
   classes_sugeridas <- histograma_hp$breaks
