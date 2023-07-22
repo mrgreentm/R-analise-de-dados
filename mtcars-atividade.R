@@ -62,7 +62,7 @@ boxplot(join_disp_hp, names = c("hp","disp"))
 ## histograma e comentar o resultado obtido.
 coluna_qsec <- data$qsec
   ## agrupando seus quartis
-  quartis_qsec <- quantile(coluna_qsec, c(0.25, 0.5, 0.75))
+  quartis_qsec <- quantile(coluna_qsec, probs = c(0, 0.25, 0.5, 0.75, 1), na.rm = TRUE)
   ### calculando a frequencia absoluta da coluna qsec
   frequencia_abs_qsec <- table(coluna_qsec)
   frequencia_abs_qsec
@@ -80,7 +80,7 @@ coluna_qsec <- data$qsec
   frequencia_relativa_acumulada
   
   ## gerando o histograma
-  hist(coluna_qsec)
+  hist(coluna_qsec, breaks = quartis_qsec)
   
   ## d) Com a coluna hp, gerar um histograma, e elaborar uma tabela de frequência usando
   ## as classes sugeridas pelo histograma.
