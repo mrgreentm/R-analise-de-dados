@@ -80,10 +80,36 @@ coluna_qsec <- data$qsec
   frequencia_relativa_acumulada
   
   ## gerando o histograma
-  hist(coluna_qsec, breaks = quartis_qsec)
+  hist(coluna_qsec, breaks = quartis_qsec, main = "Histograma dos Quartis de qsec", xlab = "qsec", ylab = "Frequência", col = "lightblue", border = "black")
   
   ## d) Com a coluna hp, gerar um histograma, e elaborar uma tabela de frequência usando
   ## as classes sugeridas pelo histograma.
+  
+  # Gerando histograma
   coluna_hp <- data$hp
   hist(coluna_hp)
+  
+  # Passo 2: Construir a tabela de frequência usando as classes sugeridas
+  classes_sugeridas <- histograma_hp$breaks
+  tabela_frequencia <- cut(coluna_hp, breaks = classes_sugeridas, include.lowest = TRUE, labels = FALSE)
+  tabela_frequencia <- table(tabela_frequencia)
+  print(tabela_frequencia)
+  
+  
+  # e) Com as colunas motor e marcha gerar a matriz com as respectivas frequências,
+  # gerar os gráficos de barras motor x marcha e marcha x motor e interpretar os
+  # resultados.
+  
+  # Passo 1: Gerar a matriz de frequências
+  coluna_motor <- data$motor
+  coluna_marcha <- data$marcha
+  matriz_frequencias <- table(coluna_motor, coluna_marcha)
+  # Passo 2: Criar os gráficos de barras motor x marcha e marcha x motor
+  par(mfrow = c(1, 2))  # Organiza os gráficos em uma linha com 2 colunas
+  # Gráfico de barras motor x marcha
+  barplot(matriz_frequencias, beside = TRUE, legend.text = TRUE, col = rainbow(nrow(matriz_frequencias)), main = "Motor x Marcha", xlab = "Motor", ylab = "Frequência")
+  # Gráfico de barras marcha x motor
+  barplot(t(matriz_frequencias), beside = TRUE, legend.text = TRUE, col = rainbow(ncol(matriz_frequencias)), main = "Marcha x Motor", xlab = "Marcha", ylab = "Frequência")
+  
+  
   
