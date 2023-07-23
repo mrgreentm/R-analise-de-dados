@@ -127,5 +127,24 @@ coluna_qsec <- data$qsec
   # Passo 2: Gerar o gráfico de barras
   barplot(media_hp_por_marcha$media_hp, names.arg = media_hp_por_marcha$marcha, col = "lightblue", main = "Média de hp por Marcha", xlab = "Marcha", ylab = "Média de hp")
   
-  
-  
+# g) Escolher duas variáveis (colunas) quantitativas, calcular o coeficiente de correlação,
+# gerar gráfico de dispersão, agrupar usando os quartis e interpretar os resultados.
+# Converter as colunas 'mpg' e 'hp' para o tipo numérico (double)
+data$mpg <- as.numeric(gsub(",", ".", data$mpg))
+data$hp <- as.numeric(gsub(",", ".", data$hp))
+
+# Calcular o coeficiente de correlação entre as colunas 'mpg' e 'hp'
+correlation <- cor(data$mpg, data$hp)
+
+# Gerar o gráfico de dispersão
+plot(data$mpg, data$hp, main = "Gráfico de Dispersão: mpg vs. hp", xlab = "mpg", ylab = "hp", col = "dodgerblue3")
+
+# Agrupar os dados usando os quartis da coluna 'mpg'
+data$mpg_quartil <- cut(data$mpg, breaks = quantile(data$mpg, probs = c(0, 0.25, 0.5, 0.75, 1), na.rm = TRUE), labels = c("Q1", "Q2", "Q3"), include.lowest = TRUE)
+
+# Gráfico de dispersão agrupado por quartis
+par(mfrow = c(2, 2))
+for (quartil in c("Q1", "Q2", "Q3")) {
+  subset_data <- subset(data, mpg_quartil == quartil)
+  plot(subset_data$mpg, subset_data$hp, main = paste("Gráfico de Dispersão - Quartil", quartil), xlab = "mpg", ylab = "hp", col = "darkorange")
+}
