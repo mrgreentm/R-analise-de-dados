@@ -23,3 +23,13 @@ par(mfrow = c(1, 2))  # Organiza os gráficos em uma linha com 2 colunas
 barplot(matriz_frequencias, beside = TRUE, legend.text = TRUE, col = rainbow(nrow(matriz_frequencias)), main = "Sexo x Lingua", xlab = "Linguas", ylab = "Frequência")
 # percebe-se que,os que escolhem a lingua estrangeira ESPANHOL, sao em grande maioria, mulheres
 # por outro lado, dentre os que escolhem inglês, mulheres e homens são quase que iguais em número, tendo as mulheres pequena maioria
+
+# b) Com algumas variáveis QUANTITATIVAS, elaborar histograma e boxplot e
+# comentar e interpretar os resultados com relação a assimetria dos dados.
+# utilizaremos a tabela imc com as colunas IMC e IDADE
+coluna_imc <- data_imc$IMC
+coluna_idade <- data_imc$Idade
+## juntando colunas
+join_imc_idade <- c(coluna_imc,coluna_idade)
+hist(join_imc_idade)
+
