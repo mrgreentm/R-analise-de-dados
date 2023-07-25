@@ -29,7 +29,13 @@ barplot(matriz_frequencias, beside = TRUE, legend.text = TRUE, col = rainbow(nro
 # utilizaremos a tabela imc com as colunas IMC e IDADE
 coluna_imc <- data_imc$IMC
 coluna_idade <- data_imc$Idade
-## juntando colunas
-join_imc_idade <- c(coluna_imc,coluna_idade)
-hist(join_imc_idade)
+join_imc_idade <- list(coluna_imc,coluna_idade)
+hist(coluna_imc)
+hist(coluna_idade)
+
+boxplot(join_imc_idade, names=c("imc","idade"))
+
+## extra - grafico de dispersao
+plot(coluna_idade, coluna_imc, pch = 16, col = "blue", 
+     xlab = "Idade", ylab = "IMC", main = "Gráfico de Dispersão IMC vs. Idade")
 
