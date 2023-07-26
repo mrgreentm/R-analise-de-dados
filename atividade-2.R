@@ -50,4 +50,12 @@ par(mfrow = c(1, 1))  # Organiza os gráficos em uma linha com 2 colunas
 # coruripe, palmeira dos indios e penedo (vermelho, verde e azul (respectivamente))
 barplot(matriz_frequencias_sm, beside = TRUE, col = rainbow(nrow(matriz_frequencias_sm)), main = "Municipio x Sexo", xlab = "Municipio", ylab = "Frequência")
 
+# ii. variáveis qualitativas x quantitativas,
+#utilizaremos a data base enem e as colunas sexo nu_nota_mt
+# Calcular a média da nota de matemática por sexo
+data_enem$NU_NOTA_CN <- as.numeric(data_enem$NU_NOTA_CN)
 
+# Criação do gráfico de barras
+barplot(tapply(data_enem$NU_NOTA_CN, data_enem$TP_SEXO, mean),
+        col = c("blue", "red"), main = "Média da Nota de Matemática por Sexo",
+        xlab = "Sexo", ylab = "Média da Nota de Matemática")
