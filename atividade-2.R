@@ -39,3 +39,15 @@ boxplot(join_imc_idade, names=c("imc","idade"))
 plot(coluna_idade, coluna_imc, pch = 16, col = "blue", 
      xlab = "Idade", ylab = "IMC", main = "Gráfico de Dispersão IMC vs. Idade")
 
+
+# c) Elaborar análise BIVARIADA, com variáveis dos tipos:
+#  i. variáveis qualitativas x qualitativas,
+# utilizaremos a database do enem e as colunas TP_SEXO e NO_MUNICIPIO_ESC
+coluna_nm_mun <- data_enem$NO_MUNICIPIO_ESC
+matriz_frequencias_sm <- table(coluna_nm_mun,coluna_tp_sexo)
+# - grafico de barras
+par(mfrow = c(1, 1))  # Organiza os gráficos em uma linha com 2 colunas
+# coruripe, palmeira dos indios e penedo (vermelho, verde e azul (respectivamente))
+barplot(matriz_frequencias_sm, beside = TRUE, col = rainbow(nrow(matriz_frequencias_sm)), main = "Municipio x Sexo", xlab = "Municipio", ylab = "Frequência")
+
+
