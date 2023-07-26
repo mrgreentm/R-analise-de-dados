@@ -59,3 +59,12 @@ data_enem$NU_NOTA_CN <- as.numeric(data_enem$NU_NOTA_CN)
 barplot(tapply(data_enem$NU_NOTA_CN, data_enem$TP_SEXO, mean),
         col = c("blue", "red"), main = "Média da Nota de Matemática por Sexo",
         xlab = "Sexo", ylab = "Média da Nota de Matemática")
+
+
+# iii) variáveis quantitativas x quantitativas.
+#utilizaremos a base de dados do enem e as colunas nota_matematica e idade
+coluna_idade_enem <- data_enem$NU_IDADE
+coluna_nota_matematica <- data_enem$NU_NOTA_MT
+#- grafico de dispersao
+plot(coluna_idade_enem, coluna_nota_matematica, pch = 16, col = "blue", 
+     xlab = "Idade", ylab = "IMC", main = "Gráfico de Dispersão Nota MT vs. Idade")
